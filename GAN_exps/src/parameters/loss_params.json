@@ -1,0 +1,7 @@
+{
+  "L1_coef": 0.1,
+  "penalty_coef": 10,
+  "image_gan_loss": 0.1,
+  "L1_autoenc": 3,
+  "style_levels_selector": 2
+}

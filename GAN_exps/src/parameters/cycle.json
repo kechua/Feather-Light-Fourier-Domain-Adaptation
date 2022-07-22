@@ -1,0 +1,8 @@
+{
+  "L1_coef": 50,
+  "penalty_coef": 10,
+  "image_gan_loss": 0.1,
+  "L1_autoenc": 3,
+  "L1_tuda": 50,
+  "L1_cuda": 50
+}

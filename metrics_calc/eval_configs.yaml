@@ -1,0 +1,48 @@
+paths:
+    # Path to directory, where saved all calculated data.
+    # In this directory should be images/ and masks/ directory with *.nii.gz files
+    main_path: /raid/data/DA_BrainDataset/
+
+    # Path to calculated GAN files, in *.nii.gz format. None if not necessary
+    gan_path: /raid/data/DA_BrainDataset/predictions/StyleGAN
+
+    # Path to calculated GAN files, in *.nii.gz format. None if not necessary
+    gan_path_cycle: /raid/data/DA_BrainDataset/predictions/cyclegan
+
+    # Path to directories with json split files. Waiting for test_t_json, val_t_json files
+    split_file_dir: /raid/data/DA_BrainDataset/split_settings
+
+list_values:
+    #Names of directory with split_settings parameter, this directories should lay in main_path_dir
+    domain_names: [sie3_to_ge15, ge3_to_ph3, ph3_to_ge15, sie15_to_ph3, ph3_to_sie15, ge15_to_ph15]
+    #Names of directory with gan files, can be same as domain_names, but we have this because of small miss communication
+    gan_values: [ge15_to_sm3, ph3_to_ge3, ge15_to_ph3, ph3_to_sm15, sm15_to_ph3, ph15_to_ge15]
+    # Domain names in each pair, in next order (target, learned)
+    data_directories:
+    - !!python/tuple
+      - siemens_3
+      - ge_15
+    - !!python/tuple
+      - ge_3
+      - philips_3
+    - !!python/tuple
+      - philips_3
+      - ge_15
+    - !!python/tuple
+      - siemens_15
+      - philips_3
+    - !!python/tuple
+      - philips_3
+      - siemens_15
+    - !!python/tuple
+      - ge_15
+      - philips_15
+      -
+    # Path to weights of baseline model
+    weights_names_predict: [weights/model_1.pth, weights/model_3.pth, weights/model_5.pth,
+                                    weights/model_0.pth, weights/model_5.pth, weights/model_2.pth]
+
+    # Path to the same domain weights
+    weigths_names_own: [weights/model_2.pth, weights/model_5.pth, weights/model_2.pth,
+                                    weights/model_5.pth, weights/model_0.pth, weights/model_4.pth]
+

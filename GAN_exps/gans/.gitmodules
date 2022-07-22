@@ -1,0 +1,6 @@
+[submodule "munit"]
+	path = munit
+	url = https://github.com/NVlabs/MUNIT.git
+[submodule "stylegan2"]
+	path = stylegan2
+	url = https://github.com/rosinality/stylegan2-pytorch.git
